@@ -23,3 +23,4 @@ if [ -e "$LOG_FILE" ]; then
 else
     echo "Файл $LOG_FILE не існує."
 fi
+
