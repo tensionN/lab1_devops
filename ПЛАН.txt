@@ -1,0 +1,31 @@
+ПЛАН
+- Що таке Event Loop?
+- Однопоточність\багатопоточність
+- Движки JavaScript (stack, heap, память)
+- Браузерний Event Loop (stack, micro/macro tasks, web api,
+			RAF, mutation, observer, queueMicrotask, 
+			стадії рендера, переповнення стеку)
+- Event loop в Node JS (Черги, шаблон реактор, демультиплексор подій,
+			планувальник потоків)
+
+АРХІТЕКТУРА БРАУЗЕРА:
+user interface: 
+	- Часть браузера з якою взаємодіємо (кнопочки всякі)
+browser engine:
+	- зєднальна частина між інтерфейсом і механізмом рендерингу
+rendering engine:
+	- получаємо сторінки з якими можемо взаємодіяти (webkit(chrome), 	geka(firefox))
+	Основна задача обработка кода (html, css, js). Будується DOM дерево, css 	дерево, розположення елементів. Проходяять стадії рендеру після яких ми 	бачимо сторінки браузера
+Networking: робота з сєттю(історія сайтів, доменні іменна, днс сервера, http, 		    tcp,udp)
+JS interpreter: Обробляє js code. Найпопулярніший v8 поверх якого побудований 			nodejs, google chrome. Предоставляє heap, стек, робота з памятю, 		зборка мусора, компіляція js
+UI backend: внутріння часть предоставляє логіку якусь
+Data persistence: localstorage, session storage, file storage, idb, websql, 			  cookie, робота з вкладками (локальна база даних)
+
+АРХІТЕКТУРКА ДВІЖКА РЕНДЕРА (webkit):
+HTML -> HTML PARSER -> DOM Tree -> RULES -> Render tree -> painting -> display
+CSS -> CSS parser -> Style Rules ->
+
+EVENT LOOP (цикл подій):
+Не являється частиною JAVASCRIPT
+В хромі та nodejs використовується v8, event loop різний, виконують одну задачу, але написані по різному
+Event loop окремий механізм, який дозволяє використовувати не блокующу модель вводу та виводу.  
